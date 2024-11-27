@@ -143,3 +143,22 @@ function rankineToKelvin() {
     let rankine = Number(inputValue.value);
     let kelvin = rankine * (5/9);
     document.querySelector("#temp-output").value = kelvin.toFixed(2);}
+
+function copyValue() {
+    let copyText = document.querySelector("#temp-output").value;
+    const button = document.querySelector("#copy-converted-value");  // Get button element
+
+    navigator.clipboard.writeText(copyText)
+        .then(() => {
+            // Add success class
+            button.classList.add('copy-success');
+
+            // Remove success class after 1 second
+            setTimeout(() => {
+                button.classList.remove('copy-success');
+            }, 375);
+        })
+        .catch((err) => {
+            console.error('Failed to copy: ', err);
+        });
+}
