@@ -153,7 +153,7 @@ function copyValue() {
             // Add success class
             button.classList.add('copy-success');
 
-            // Remove success class after 1 second
+            // Remove success class after 0.375 seconds
             setTimeout(() => {
                 button.classList.remove('copy-success');
             }, 375);
